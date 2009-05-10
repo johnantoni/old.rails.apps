@@ -1,0 +1,3 @@
+<% for @cat in @categories do %>
+<span style="font: normal bold 1.5em Arial, sans-serif;"><%= link_to @cat.name, :controller => "bownz", :action => "sort", :id => @cat.id %> </span>
+<% end %>

@@ -1,0 +1,13 @@
+<img src="/images/iStock_000003756206XSmall.jpg" style="float:right;" />
+	
+<h2>Your Note</h2>
+
+<%= render :partial => 'show' %>
+	
+<p>
+<%= button_to_function "Edit Note", "window.location='/note/edit/#{@note.id}'" %>
+<%= button_to_function "Cancel", "window.location='/note/list'" %>
+<%= link_to '[Destroy]', { :action => 'destroy', :id => @note }, :confirm => 'Are you sure?', :method => :post %>
+</p>
+
+<%= render :partial => 'versions' %>

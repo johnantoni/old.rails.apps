@@ -1,0 +1,4 @@
+<% form_tag :action => 'comment', :id => @chat.id do %>
+	<p><%= text_field :comment, :comment, 'size' => 30 %></p>
+	<%= submit_tag "Add Comment" %></p>
+<% end %>

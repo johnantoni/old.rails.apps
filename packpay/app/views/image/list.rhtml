@@ -1,0 +1,23 @@
+<h2>Your Photos</h2>
+
+<p>
+<%= button_to_function "Add Photo", "window.location='/image/new/'" %>
+ or 
+<%= button_to_function "Go Back", "window.location='/index/'" %>
+</p>
+
+<p>
+<% for image in self.current_user.images %>
+<div style="float:left;">
+	<%= link_to image_tag(image.public_filename(:thumb)), :action => 'show', :id => image %>
+	<br />
+	<% if not image.default %>
+		<%= link_to "Use for Profile", :action => "set", :id => image %>
+	<% end %>
+</div>
+<% end %>&nbsp;
+</p>   
+
+<p>
+	<%= will_paginate @images %>
+</p>

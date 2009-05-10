@@ -1,0 +1,17 @@
+<img src="/images/iStock_000003756206XSmall.jpg" style="float:right;" />
+	
+<h2>Your Reminders</h2>
+
+<% form_remote_tag :url => { :action => "add_reminder" },
+ 	:update => "reminders", 
+	:success => visual_effect(:highlight, "reminders") do %>
+	<p>Subject: <%= text_field :reminder, 'title', 'size' => 20  %></p>
+	<p>Date: <%= date_select :reminder, 'date' %></p>
+	<%= hidden_field :reminder, 'user_id', :value => self.current_user.id %>
+	<p><%= submit_tag 'Create Reminder' %></p>
+<% end %>
+
+<h3>Current Reminders</h3>
+<ul id="reminders">
+	<%= render :partial => 'reminders' %>
+</ul>

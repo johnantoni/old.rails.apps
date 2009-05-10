@@ -1,0 +1,13 @@
+<img src="/images/iStock_000003756206XSmall.jpg" style="float:right;" />
+	
+<h2>Your Notes</h2>
+
+<% form_tag :action => 'create' do %>
+	<%= render :partial => 'edit' %>
+	<p><%= submit_tag "Create Note" %></p>
+<% end %>
+   
+<h3>Current Notes</h3>
+<ul id="notes">
+	<%= render :partial => 'notes' %>
+</ul>

@@ -1,0 +1,15 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+<h2>Create Bownz</h2>
+
+<% form_tag :action => 'create' do %>
+	<p>Title: <%= text_field :chat, :name, 'size' => 20 %></p>
+	<p>Subject: 
+	<%= select (:chat, :subject, @categories.map {|u| [u.name,u.id]}) %>
+	</p>
+
+	<p>Comment: <%= text_field :comment, :comment, 'size' => 30 %></p>
+
+	<%= submit_tag "Create Bownz" %></p>
+<% end %>
+
+</div>

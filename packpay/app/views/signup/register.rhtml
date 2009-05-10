@@ -1,0 +1,7 @@
+<h2>Join the mailing list so when we go live you're the first to get an invite</h2>
+<% form_tag :action => 'create' do %>
+	<p>Your Email Address: <%= text_field 'signup', 'email', 'size' => 15 %></p>
+	<p><%= submit_tag "Yep, Sign me up!" %></p>
+<% end %>
+
+<p><%= flash[:notice] %></p>

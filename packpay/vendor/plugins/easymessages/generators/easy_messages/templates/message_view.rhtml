@@ -1,0 +1,29 @@
+<div class="" >
+<%%= ezm_message_menu -%>
+  <%%= flash[:notice] %> 
+  <fieldset>
+    <legend>View Message</legend>
+	
+	  <p>
+        <label for="message_sender_name" ><strong>To:</strong></label>
+        <%%=h @message.receiver_name %>
+      </p>
+      <p>
+        <label for="message_sender_name" ><strong>From:</strong></label>
+        <%%=h @message.sender_name %>
+      </p>
+    
+      <p>
+        <label for="message_subject" ><strong>Subject:</strong></label>  
+        <%%=h @message.subject%>
+      </p>
+      
+      <p>
+        <label for="message_body" ><strong>Message:</strong></label>  
+        <%%= simple_format(@message.body) %>
+      </p>
+
+  </fieldset>
+  
+  <%%= ezm_button_to_reply(@message) %>
+</div>

@@ -1,0 +1,2 @@
+module BownzHelper
+end

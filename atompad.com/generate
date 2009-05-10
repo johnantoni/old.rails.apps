@@ -1,0 +1,811 @@
+Script started on Thu Aug  9 16:41:35 2007
+john-griffiths-computer:~/trunk indiehead$ cap deploy_with_migrationscap deploy_with_migrations                          svn commit -m 'show'cd ..[Ksvn commit -m 'show'[Kscript generate migration UserProfile[1P[4h/[4l
+      exists  db/migrate
+      create  db/migrate/006_user_profile.rb
+john-griffiths-computer:~/trunk indiehead$ rake db:migrate
+(in /Users/indiehead/trunk)
+john-griffiths-computer:~/trunk indiehead$ rake db:migrate
+(in /Users/indiehead/trunk)
+== UserProfile: migrating =====================================================
+-- add_column(:users, :profile, :text)
+   -> 0.2045s
+== UserProfile: migrated (0.2046s) ============================================
+
+john-griffiths-computer:~/trunk indiehead$ cd db
+john-griffiths-computer:~/trunk/db indiehead$ cd migrate
+john-griffiths-computer:~/trunk/db/migrate indiehead$ svn add *.*
+svn: warning: '001_create_signups.rb' is already under version control
+svn: warning: '002_create_users.rb' is already under version control
+svn: warning: '003_create_notes.rb' is already under version control
+svn: warning: '004_notes_upgrade.rb' is already under version control
+svn: warning: '005_acts_as_taggable_migration.rb' is already under version control
+A         006_user_profile.rb
+john-griffiths-computer:~/trunk/db/migrate indiehead$ cd ..
+john-griffiths-computer:~/trunk/db indiehead$ cd . ..
+john-griffiths-computer:~/trunk indiehead$ cd    cd ..svn add *.*[1Pcd migratedb[Krake db:migrate[4hscript/generate migrat[4lion UserProfile[Ksvn commit -m 'show'cd ..[Ksvn add *.*[1Pcd account..[Ksvn add *.*[4Pcd noteviews[2Pappscript/server
+=> Booting Mongrel (use 'script/server webrick' to force WEBrick)
+=> Rails application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+** Ruby version is up-to-date; cgi_multipart_eof_fix was not loaded
+** Starting Mongrel listening at 0.0.0.0:3000
+** Starting Rails with development environment...
+** Rails loaded.
+** Loading any Rails specific GemPlugins
+** Signals ready.  TERM => stop.  USR2 => restart.  INT => stop (no restart).
+** Rails signals registered.  HUP => reload (without restart).  It might not work well.
+** Mongrel available at 0.0.0.0:3000
+** Use CTRL-C to stop.
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:45:50) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering  within layouts/application
+Rendering account/login
+Rendered shared/_status (0.00129)
+Rendered shared/_menu (0.00177)
+Rendered account/_sidebar (0.00061)
+Rendered shared/_footer (0.00073)
+Rendered shared/_analytics (0.00057)
+Completed in 0.01407 (71 reqs/sec) | Rendering: 0.01309 (93%) | 200 OK [http://0.0.0.0/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:45:55) [POST]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"commit"=>"Sign In", "action"=>"login", "controller"=>"account", "login"=>"john", "password"=>"cool"}
+  [4;36;1mSQL (0.000167)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (0.003304)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000531)[0m   [0;1mSELECT * FROM users WHERE (users.`login` = 'john') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.04659 (21 reqs/sec) | DB: 0.00400 (8%) | 302 Found [http://0.0.0.0/]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:45:55) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002841)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000797)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00033)
+Rendered shared/_menu (0.00090)
+Rendered account/_sidebar (0.00013)
+Rendered shared/_footer (0.00029)
+Rendered shared/_analytics (0.00011)
+Completed in 0.02610 (38 reqs/sec) | Rendering: 0.00869 (33%) | DB: 0.00364 (13%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:45:56) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002925)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000791)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000390)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:32)
+Rendered shared/_status (0.00170)
+Rendered shared/_menu (0.00102)
+Rendered account/_sidebar (0.00012)
+Rendered shared/_footer (0.00026)
+Rendered shared/_analytics (0.00011)
+Completed in 0.02764 (36 reqs/sec) | Rendering: 0.01152 (41%) | DB: 0.00411 (14%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing AccountController#update (for 127.0.0.1 at 2007-08-09 16:46:10) [POST]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"user"=>{"profile"=>"some text about me...", "lastname"=>"gddd", "firstname"=>"johnddd", "login"=>"john"}, "commit"=>"Update Profile", "action"=>"update", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002844)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000776)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000372)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+  [4;35;1mSQL (0.000143)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.027429)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.login) = 'john' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000497)[0m   [0mSELECT * FROM users WHERE (LOWER(users.email) = 'john@red91.com' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.000426)[0m   [0;1mUPDATE users SET `created_at` = '2007-08-06 22:14:15', `login` = 'john', `crypted_password` = 'c74b8e266b6ba1b8e0943abab6cf824344f4bfe0', `lastname` = 'gddd', `remember_token_expires_at` = NULL, `salt` = 'e671b2391905b26c20b2f01b8bd0331dd8c420c6', `profile` = 'some text about me...', `remember_token` = NULL, `email` = 'john@red91.com', `firstname` = 'johnddd', `updated_at` = '2007-08-09 16:46:10' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000830)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.12783 (7 reqs/sec) | DB: 0.03332 (26%) | 302 Found [http://0.0.0.0/account/update]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:46:10) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002721)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000772)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00037)
+Rendered shared/_menu (0.00097)
+Rendered account/_sidebar (0.00015)
+Rendered shared/_footer (0.00028)
+Rendered shared/_analytics (0.00012)
+Completed in 0.02337 (42 reqs/sec) | Rendering: 0.00822 (35%) | DB: 0.00349 (14%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:46:14) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002786)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000760)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000325)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:32)
+Rendered shared/_status (0.00151)
+Rendered shared/_menu (0.00091)
+Rendered account/_sidebar (0.00011)
+Rendered shared/_footer (0.00023)
+Rendered shared/_analytics (0.00010)
+Completed in 0.02459 (40 reqs/sec) | Rendering: 0.00877 (35%) | DB: 0.00387 (15%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:46:17) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002895)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000779)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00033)
+Rendered shared/_menu (0.00086)
+Rendered account/_sidebar (0.00014)
+Rendered shared/_footer (0.00024)
+Rendered shared/_analytics (0.00010)
+Completed in 0.02469 (40 reqs/sec) | Rendering: 0.00740 (29%) | DB: 0.00367 (14%) | 200 OK [http://0.0.0.0/account]
+^C** INT signal received.
+Exiting
+john-griffiths-computer:~/trunk indiehead$ script/server[8Pcd ..svn add *.*[1Pcd migratedb[Krake db:migrate[4hscript/generate migrat[4lion UserProfile       Tags s                                  svn commit -m 'show'cd ..[Ksvn add *.*[1Pcd account..[Ksvn add *.*[4Pcd noteviews[2Pappscript/servercap deploy_with_migrations[13Pscript/server
+=> Booting Mongrel (use 'script/server webrick' to force WEBrick)
+=> Rails application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+** Ruby version is up-to-date; cgi_multipart_eof_fix was not loaded
+** Starting Mongrel listening at 0.0.0.0:3000
+** Starting Rails with development environment...
+** Rails loaded.
+** Loading any Rails specific GemPlugins
+** Signals ready.  TERM => stop.  USR2 => restart.  INT => stop (no restart).
+** Rails signals registered.  HUP => reload (without restart).  It might not work well.
+** Mongrel available at 0.0.0.0:3000
+** Use CTRL-C to stop.
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:48:25) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering  within layouts/application
+Rendering account/login
+  [4;36;1mSQL (0.000175)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (0.002728)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000435)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendered shared/_status (0.05027)
+Rendered shared/_menu (0.00315)
+Rendered account/_sidebar (0.00083)
+Rendered shared/_footer (0.00092)
+Rendered shared/_analytics (0.00067)
+Completed in 0.06462 (15 reqs/sec) | Rendering: 0.06024 (93%) | DB: 0.00334 (5%) | 200 OK [http://0.0.0.0/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:48:31) [POST]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"commit"=>"Sign In", "action"=>"login", "controller"=>"account", "login"=>"john", "password"=>"cool"}
+  [4;35;1mUser Columns (0.002757)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000822)[0m   [0;1mSELECT * FROM users WHERE (users.`login` = 'john') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.02143 (46 reqs/sec) | DB: 0.00358 (16%) | 302 Found [http://0.0.0.0/]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:48:31) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002796)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000618)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00034)
+Rendered shared/_menu (0.00078)
+Rendered account/_sidebar (0.00011)
+Rendered shared/_footer (0.00023)
+Rendered shared/_analytics (0.00010)
+Completed in 0.02832 (35 reqs/sec) | Rendering: 0.00848 (29%) | DB: 0.00341 (12%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:48:33) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002837)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000605)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000359)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+  [4;36;1mTagging Columns (0.002071)[0m   [0;1mSHOW FIELDS FROM taggings[0m
+  [4;35;1mTag Load (0.002042)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'User') AND (taggings.taggable_id = 1)) [0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:36)
+Rendered shared/_status (0.00138)
+Rendered shared/_menu (0.00086)
+Rendered account/_sidebar (0.00011)
+Rendered shared/_footer (0.00022)
+Rendered shared/_analytics (0.00009)
+Completed in 0.13308 (7 reqs/sec) | Rendering: 0.11067 (83%) | DB: 0.00791 (5%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing AccountController#update (for 127.0.0.1 at 2007-08-09 16:48:42) [POST]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"user"=>{"profile"=>"some text about me...", "lastname"=>"gddd", "firstname"=>"johnddd", "tag_list"=>"strong", "login"=>"john"}, "commit"=>"Update Profile", "action"=>"update", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002924)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000588)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000338)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+  [4;35;1mSQL (0.000144)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.000478)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.login) = 'john' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000370)[0m   [0mSELECT * FROM users WHERE (LOWER(users.email) = 'john@red91.com' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.000374)[0m   [0;1mUPDATE users SET `created_at` = '2007-08-06 22:14:15', `login` = 'john', `crypted_password` = 'c74b8e266b6ba1b8e0943abab6cf824344f4bfe0', `lastname` = 'gddd', `remember_token_expires_at` = NULL, `salt` = 'e671b2391905b26c20b2f01b8bd0331dd8c420c6', `profile` = 'some text about me...', `remember_token` = NULL, `email` = 'john@red91.com', `firstname` = 'johnddd', `updated_at` = '2007-08-09 16:48:42' WHERE `id` = 1[0m
+  [4;35;1mTag Load (0.000377)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'User') AND (taggings.taggable_id = 1)) [0m
+  [4;36;1mTag Columns (0.001951)[0m   [0;1mSHOW FIELDS FROM tags[0m
+  [4;35;1mTag Load (0.000733)[0m   [0mSELECT * FROM tags WHERE (tags.`name` = 'strong') LIMIT 1[0m
+  [4;36;1mTag Load (0.000354)[0m   [0;1mSELECT * FROM tags WHERE (tags.name = 'strong') LIMIT 1[0m
+  [4;35;1mSQL (0.016385)[0m   [0mINSERT INTO tags (`name`) VALUES('strong')[0m
+  [4;36;1mSQL (0.000344)[0m   [0;1mINSERT INTO taggings (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(6, 'User', 1, '2007-08-09 16:48:42')[0m
+  [4;35;1mSQL (0.001440)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.05885 (16 reqs/sec) | DB: 0.02680 (45%) | 302 Found [http://0.0.0.0/account/update]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:48:42) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002915)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000815)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00037)
+Rendered shared/_menu (0.00089)
+Rendered account/_sidebar (0.00012)
+Rendered shared/_footer (0.00026)
+Rendered shared/_analytics (0.00011)
+Completed in 0.02797 (35 reqs/sec) | Rendering: 0.00783 (28%) | DB: 0.00373 (13%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:48:44) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002968)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000946)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000341)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+  [4;35;1mTag Load (0.000645)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'User') AND (taggings.taggable_id = 1)) [0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:36)
+Rendered shared/_status (0.00160)
+Rendered shared/_menu (0.00095)
+Rendered account/_sidebar (0.00012)
+Rendered shared/_footer (0.00044)
+Rendered shared/_analytics (0.00011)
+Completed in 0.03371 (29 reqs/sec) | Rendering: 0.01117 (33%) | DB: 0.00490 (14%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:48:47) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002898)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.002208)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000359)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+  [4;35;1mTag Load (0.000498)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'User') AND (taggings.taggable_id = 1)) [0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:36)
+Rendered shared/_status (0.00159)
+Rendered shared/_menu (0.00098)
+Rendered account/_sidebar (0.00012)
+Rendered shared/_footer (0.00026)
+Rendered shared/_analytics (0.00011)
+Completed in 0.03428 (29 reqs/sec) | Rendering: 0.01052 (30%) | DB: 0.00596 (17%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing NoteController#index (for 127.0.0.1 at 2007-08-09 16:48:49) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"index", "controller"=>"note"}
+  [4;36;1mUser Columns (0.002901)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000796)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Columns (0.002597)[0m   [0;1mSHOW FIELDS FROM notes[0m
+  [4;35;1mSQL (0.000697)[0m   [0mSELECT count(*) AS count_all FROM notes [0m
+  [4;36;1mNote Load (0.000498)[0m   [0;1mSELECT * FROM notes ORDER BY updated_at DESC LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering note/list
+Rendered shared/_status (0.00044)
+Rendered shared/_menu (0.00103)
+Rendered note/_sidebar (0.00078)
+Rendered shared/_footer (0.00029)
+Rendered shared/_analytics (0.00011)
+Completed in 0.04656 (21 reqs/sec) | Rendering: 0.01313 (28%) | DB: 0.00749 (16%) | 200 OK [http://0.0.0.0/note]
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2007-08-09 16:48:51) [GET]
+  Session ID: 08eaa9fc045e869e95e25842344904bd
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002856)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000769)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.000393)[0m   [0;1mUPDATE users SET `created_at` = '2007-08-06 22:14:15', `login` = 'john', `crypted_password` = 'c74b8e266b6ba1b8e0943abab6cf824344f4bfe0', `lastname` = 'gddd', `remember_token_expires_at` = NULL, `salt` = 'e671b2391905b26c20b2f01b8bd0331dd8c420c6', `profile` = 'some text about me...', `remember_token` = NULL, `email` = 'john@red91.com', `firstname` = 'johnddd', `updated_at` = '2007-08-09 16:48:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000844)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://0.0.0.0:3000/
+Completed in 0.03340 (29 reqs/sec) | DB: 0.00502 (15%) | 302 Found [http://0.0.0.0/account/logout]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:48:52) [GET]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering  within layouts/application
+Rendering account/login
+Rendered shared/_status (0.00038)
+Rendered shared/_menu (0.00037)
+Rendered account/_sidebar (0.00009)
+Rendered shared/_footer (0.00020)
+Rendered shared/_analytics (0.00008)
+Completed in 0.00670 (149 reqs/sec) | Rendering: 0.00530 (79%) | DB: 0.00000 (0%) | 200 OK [http://0.0.0.0/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:48:57) [POST]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"commit"=>"Sign In", "action"=>"login", "controller"=>"account", "login"=>"john", "password"=>"cool"}
+  [4;36;1mUser Columns (0.002901)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000756)[0m   [0mSELECT * FROM users WHERE (users.`login` = 'john') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.01937 (51 reqs/sec) | DB: 0.00366 (18%) | 302 Found [http://0.0.0.0/]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:48:57) [GET]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002725)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000794)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00033)
+Rendered shared/_menu (0.00090)
+Rendered account/_sidebar (0.00011)
+Rendered shared/_footer (0.00024)
+Rendered shared/_analytics (0.00010)
+Completed in 0.02725 (36 reqs/sec) | Rendering: 0.00750 (27%) | DB: 0.00352 (12%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#edit (for 127.0.0.1 at 2007-08-09 16:49:00) [GET]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"action"=>"edit", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002793)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000617)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000375)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) [0m
+Rendering  within layouts/application
+Rendering account/edit
+DEPRECATION WARNING: start_form_tag is deprecated and will be removed from Rails 2.0 (use form_tag instead)  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:5)
+  [4;35;1mTag Load (0.000490)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'User') AND (taggings.taggable_id = 1)) [0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47account47edit46rhtml at script/../config/../app/views/account/edit.rhtml:36)
+Rendered shared/_status (0.00187)
+Rendered shared/_menu (0.00100)
+Rendered account/_sidebar (0.00013)
+Rendered shared/_footer (0.00026)
+Rendered shared/_analytics (0.00012)
+Completed in 0.02947 (33 reqs/sec) | Rendering: 0.01097 (37%) | DB: 0.00428 (14%) | 200 OK [http://0.0.0.0/account/edit]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:49:01) [GET]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002768)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000565)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00034)
+Rendered shared/_menu (0.00090)
+Rendered account/_sidebar (0.00011)
+Rendered shared/_footer (0.00023)
+Rendered shared/_analytics (0.00010)
+Completed in 0.02693 (37 reqs/sec) | Rendering: 0.00756 (28%) | DB: 0.00333 (12%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2007-08-09 16:49:03) [GET]
+  Session ID: b763bb52ab7430d31fe107b30f8058ae
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+  [4;36;1mUser Columns (0.002766)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.001034)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.000400)[0m   [0mUPDATE users SET `created_at` = '2007-08-06 22:14:15', `login` = 'john', `crypted_password` = 'c74b8e266b6ba1b8e0943abab6cf824344f4bfe0', `lastname` = 'gddd', `remember_token_expires_at` = NULL, `salt` = 'e671b2391905b26c20b2f01b8bd0331dd8c420c6', `profile` = 'some text about me...', `remember_token` = NULL, `email` = 'john@red91.com', `firstname` = 'johnddd', `updated_at` = '2007-08-09 16:49:03' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.001045)[0m   [0;1mCOMMIT[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://0.0.0.0:3000/
+Completed in 0.03450 (28 reqs/sec) | DB: 0.00541 (15%) | 302 Found [http://0.0.0.0/account/logout]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:49:04) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering  within layouts/application
+Rendering account/login
+Rendered shared/_status (0.00039)
+Rendered shared/_menu (0.00039)
+Rendered account/_sidebar (0.00009)
+Rendered shared/_footer (0.00020)
+Rendered shared/_analytics (0.00008)
+Completed in 0.00709 (141 reqs/sec) | Rendering: 0.00575 (81%) | DB: 0.00000 (0%) | 200 OK [http://0.0.0.0/]
+^C** INT signal received.
+Exiting
+john-griffiths-computer:~/trunk indiehead$ script/server[8Pcd ..svn add *.*[1Pcd migratesvn add *.*[1Pcd migratedb[Krake db:migrate               svn commit 'profi      = -m 'profile and tags'
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+Sending        app/models/user.rb
+Sending        app/views/account/edit.rhtml
+Adding         db/migrate/006_user_profile.rb
+Sending        db/schema.rb
+Transmitting file data ....
+Committed revision 40.
+john-griffiths-computer:~/trunk indiehead$ cap deply oy) _m wih th_migrations
+  * executing task deploy_with_migrations
+  * executing task update_code
+  * querying latest revision...
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+  * executing "if [[ ! -d /var/www/apps/atompad/releases/20070809155020 ]]; then\n              svn co --no-auth-cache   -q -r40 svn+ssh://deploy@atompad.com/var/www/apps/atompad/repos/trunk /var/www/apps/atompad/releases/20070809155020 &&\n              (test -e /var/www/apps/atompad/revisions.log || (touch /var/www/apps/atompad/revisions.log && chmod 666 /var/www/apps/atompad/revisions.log)) && echo `date +\"%Y-%m-%d %H:%M:%S\"` $USER 40 20070809155020 >> /var/www/apps/atompad/revisions.log;\n            fi"
+    servers: ["atompad.com"]
+Enter password for /users/indiehead/.ssh/id_rsa: 
+    [atompad.com] executing command
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+Password: 
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+    command finished
+  * executing task set_permissions
+  * executing "chmod -R g+w /var/www/apps/atompad/releases/20070809155020"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "rm -rf /var/www/apps/atompad/releases/20070809155020/log /var/www/apps/atompad/releases/20070809155020/public/system &&\n    ln -nfs /var/www/apps/atompad/shared/log /var/www/apps/atompad/releases/20070809155020/log &&\n    ln -nfs /var/www/apps/atompad/shared/system /var/www/apps/atompad/releases/20070809155020/public/system"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "test -d /var/www/apps/atompad/shared/pids && \n    rm -rf /var/www/apps/atompad/releases/20070809155020/tmp/pids && \n    ln -nfs /var/www/apps/atompad/shared/pids /var/www/apps/atompad/releases/20070809155020/tmp/pids; true"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "TZ=UTC find /var/www/apps/atompad/releases/20070809155020/public/images /var/www/apps/atompad/releases/20070809155020/public/stylesheets /var/www/apps/atompad/releases/20070809155020/public/javascripts -exec touch -t 200708091550.46 {} \\;; true"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task after_update_code
+  * executing task migrate
+  * executing "ls -x1 /var/www/apps/atompad/releases"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "cd /var/www/apps/atompad/releases/20070809155020 && rake RAILS_ENV=production  db:migrate"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+ ** [out :: atompad.com] (in /var/www/apps/atompad/releases/20070809155020)
+ ** [out :: atompad.com] Rails Error: Unable to access log file. Please ensure that /var/www/apps/atompad/releases/20070809155020/config/../log/production.log exists and is chmod 0666. The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+ ** [out :: atompad.com] == UserProfile: migrating =====================================================
+ ** [out :: atompad.com] -- add_column(:users, :profile, :text)
+ ** [out :: atompad.com] -> 0.0941s
+ ** [out :: atompad.com] == UserProfile: migrated (0.0944s) ============================================
+    command finished
+  * executing task symlink
+  * executing "ln -nfs /var/www/apps/atompad/releases/20070809155020 /var/www/apps/atompad/current"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task after_symlink
+  * executing task set_perms_for_mongrel_dirs
+  * executing "sudo  chgrp -R app_atompad /var/www/apps/atompad/current/tmp /var/www/apps/atompad/shared"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chmod -R g+w /var/www/apps/atompad/current/tmp /var/www/apps/atompad/shared"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chown mongrel_atompad /var/www/apps/atompad/shared/log/mongrel.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chgrp app_atompad /var/www/apps/atompad/shared/log/mongrel.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chown mongrel_atompad /var/www/apps/atompad/shared/log/production.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chgrp app_atompad /var/www/apps/atompad/shared/log/production.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task restart
+  * executing task restart_mongrel_cluster
+  * executing "sudo  mongrel_rails cluster::restart -C /etc/mongrel_cluster/atompad.yml"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+ ** [out :: atompad.com] Stopping 2 Mongrel servers...
+ ** [out :: atompad.com] Starting 2 Mongrel servers...
+    command finished
+john-griffiths-computer:~/trunk indiehead$ script/server
+=> Booting Mongrel (use 'script/server webrick' to force WEBrick)
+=> Rails application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+** Ruby version is up-to-date; cgi_multipart_eof_fix was not loaded
+** Starting Mongrel listening at 0.0.0.0:3000
+** Starting Rails with development environment...
+** Rails loaded.
+** Loading any Rails specific GemPlugins
+** Signals ready.  TERM => stop.  USR2 => restart.  INT => stop (no restart).
+** Rails signals registered.  HUP => reload (without restart).  It might not work well.
+** Mongrel available at 0.0.0.0:3000
+** Use CTRL-C to stop.
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:56:45) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering  within layouts/application
+Rendering account/login
+Rendered shared/_status (0.00129)
+Rendered shared/_menu (0.00178)
+Rendered account/_sidebar (0.00063)
+Rendered shared/_footer (0.00072)
+Rendered shared/_analytics (0.00057)
+Completed in 0.01339 (74 reqs/sec) | Rendering: 0.01242 (92%) | 200 OK [http://0.0.0.0/]
+
+
+Processing AccountController#login (for 127.0.0.1 at 2007-08-09 16:56:49) [POST]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"commit"=>"Sign In", "action"=>"login", "controller"=>"account", "login"=>"john", "password"=>"cool"}
+  [4;36;1mSQL (0.000182)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (0.003271)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000421)[0m   [0;1mSELECT * FROM users WHERE (users.`login` = 'john') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed in 0.04918 (20 reqs/sec) | DB: 0.00387 (7%) | 302 Found [http://0.0.0.0/]
+
+
+Processing AccountController#index (for 127.0.0.1 at 2007-08-09 16:56:49) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"index", "controller"=>"account"}
+  [4;35;1mUser Columns (0.002766)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000732)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+Rendering  within layouts/application
+Rendering account/index
+Rendered shared/_status (0.00035)
+Rendered shared/_menu (0.00079)
+Rendered account/_sidebar (0.00012)
+Rendered shared/_footer (0.00024)
+Rendered shared/_analytics (0.00012)
+Completed in 0.02582 (38 reqs/sec) | Rendering: 0.00850 (32%) | DB: 0.00350 (13%) | 200 OK [http://0.0.0.0/account]
+
+
+Processing NoteController#index (for 127.0.0.1 at 2007-08-09 16:56:51) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"index", "controller"=>"note"}
+  [4;35;1mUser Columns (0.002894)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000521)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mNote Columns (0.002159)[0m   [0mSHOW FIELDS FROM notes[0m
+  [4;36;1mSQL (0.001124)[0m   [0;1mSELECT count(*) AS count_all FROM notes [0m
+  [4;35;1mNote Load (0.000393)[0m   [0mSELECT * FROM notes ORDER BY updated_at DESC LIMIT 0, 10[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering note/list
+Rendered shared/_status (0.00047)
+Rendered shared/_menu (0.00091)
+Rendered note/_sidebar (0.00074)
+Rendered shared/_footer (0.00024)
+Rendered shared/_analytics (0.00009)
+Completed in 0.04350 (22 reqs/sec) | Rendering: 0.01280 (29%) | DB: 0.00709 (16%) | 200 OK [http://0.0.0.0/note]
+
+
+Processing NoteController#show (for 127.0.0.1 at 2007-08-09 16:56:53) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"note"}
+  [4;36;1mUser Columns (0.002810)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000671)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Columns (0.002368)[0m   [0;1mSHOW FIELDS FROM notes[0m
+  [4;35;1mNote Load (0.000918)[0m   [0mSELECT * FROM notes WHERE (notes.`id` = 2) [0m
+Rendering  within layouts/application
+Rendering note/show
+  [4;36;1mTagging Columns (0.002121)[0m   [0;1mSHOW FIELDS FROM taggings[0m
+  [4;35;1mTag Load (0.000599)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Note') AND (taggings.taggable_id = 2)) [0m
+  [4;36;1mTag Columns (0.001938)[0m   [0;1mSHOW FIELDS FROM tags[0m
+Rendered note/_formshow (0.03139)
+Rendered shared/_status (0.00160)
+Rendered shared/_menu (0.00102)
+Rendered note/_sidebar (0.00012)
+Rendered shared/_footer (0.00028)
+Rendered shared/_analytics (0.00011)
+Completed in 0.07148 (13 reqs/sec) | Rendering: 0.03569 (49%) | DB: 0.01143 (15%) | 200 OK [http://0.0.0.0/note/show/2]
+
+
+Processing NoteController#edit (for 127.0.0.1 at 2007-08-09 16:56:55) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"note"}
+  [4;35;1mUser Columns (0.002872)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000769)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mNote Columns (0.002387)[0m   [0mSHOW FIELDS FROM notes[0m
+  [4;36;1mNote Load (0.000886)[0m   [0;1mSELECT * FROM notes WHERE (notes.`id` = 2) [0m
+Rendering  within layouts/application
+Rendering note/edit
+  [4;35;1mTag Load (0.000705)[0m   [0mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Note') AND (taggings.taggable_id = 2)) [0m
+Rendered note/_form (0.00415)
+Rendered shared/_status (0.00171)
+Rendered shared/_menu (0.00109)
+Rendered note/_sidebar (0.00013)
+Rendered shared/_footer (0.00028)
+Rendered shared/_analytics (0.00011)
+Completed in 0.04835 (20 reqs/sec) | Rendering: 0.01401 (28%) | DB: 0.00762 (15%) | 200 OK [http://0.0.0.0/note/edit/2]
+
+
+Processing NoteController#edit (for 127.0.0.1 at 2007-08-09 16:57:49) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"note"}
+  [4;36;1mUser Columns (0.002844)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000440)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Columns (0.002324)[0m   [0;1mSHOW FIELDS FROM notes[0m
+  [4;35;1mNote Load (0.000812)[0m   [0mSELECT * FROM notes WHERE (notes.`id` = 2) [0m
+Rendering  within layouts/application
+Rendering note/edit
+  [4;36;1mTag Load (0.000559)[0m   [0;1mSELECT tags.* FROM tags INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((taggings.taggable_type = 'Note') AND (taggings.taggable_id = 2)) [0m
+Rendered note/_form (0.00299)
+Rendered shared/_support (0.00067)
+Rendered shared/_status (0.00181)
+Rendered shared/_menu (0.00122)
+Rendered note/_sidebar (0.00012)
+Rendered shared/_footer (0.00029)
+Rendered shared/_analytics (0.00013)
+Completed in 0.04844 (20 reqs/sec) | Rendering: 0.01449 (29%) | DB: 0.00698 (14%) | 200 OK [http://0.0.0.0/note/edit/2]
+
+
+Processing NoteController#list (for 127.0.0.1 at 2007-08-09 16:58:10) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"list", "controller"=>"note"}
+  [4;35;1mUser Columns (0.002831)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mUser Load (0.000818)[0m   [0;1mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;35;1mNote Columns (0.002431)[0m   [0mSHOW FIELDS FROM notes[0m
+  [4;36;1mSQL (0.000747)[0m   [0;1mSELECT count(*) AS count_all FROM notes [0m
+  [4;35;1mNote Load (0.000363)[0m   [0mSELECT * FROM notes ORDER BY updated_at DESC LIMIT 0, 10[0m
+Rendering  within layouts/application
+Rendering note/list
+Rendered shared/_status (0.00047)
+Rendered shared/_menu (0.00101)
+Rendered note/_sidebar (0.00013)
+Rendered shared/_footer (0.00028)
+Rendered shared/_analytics (0.00012)
+Completed in 0.04089 (24 reqs/sec) | Rendering: 0.01016 (24%) | DB: 0.00719 (17%) | 200 OK [http://0.0.0.0/note/list]
+
+
+Processing NoteController#new (for 127.0.0.1 at 2007-08-09 16:58:12) [GET]
+  Session ID: 9bb0c0db0e87c13e0c658f943bc79621
+  Parameters: {"action"=>"new", "controller"=>"note"}
+  [4;36;1mUser Columns (0.002861)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mUser Load (0.000964)[0m   [0mSELECT * FROM users WHERE (users.`id` = 1) LIMIT 1[0m
+  [4;36;1mNote Columns (0.002640)[0m   [0;1mSHOW FIELDS FROM notes[0m
+Rendering  within layouts/application
+Rendering note/new
+Rendered note/_form (0.00157)
+Rendered shared/_support (0.00012)
+Rendered shared/_status (0.00167)
+Rendered shared/_menu (0.00101)
+Rendered note/_sidebar (0.00011)
+Rendered shared/_footer (0.00027)
+Rendered shared/_analytics (0.00010)
+Completed in 0.04440 (22 reqs/sec) | Rendering: 0.01148 (25%) | DB: 0.00646 (14%) | 200 OK [http://0.0.0.0/note/new]
+^C** INT signal received.
+Exiting
+john-griffiths-computer:~/trunk indiehead$ cd app 
+john-griffiths-computer:~/trunk/app indiehead$ cd views
+john-griffiths-computer:~/trunk/app/views indiehead$ cd shared
+john-griffiths-computer:~/trunk/app/views/shared indiehead$ a svn add *.8
+svn: warning: '*.8' not found
+john-griffiths-computer:~/trunk/app/views/shared indiehead$ svn add *.8 *
+svn: warning: '_analytics.rhtml' is already under version control
+svn: warning: '_footer.rhtml' is already under version control
+svn: warning: '_menu.rhtml' is already under version control
+svn: warning: '_status.rhtml' is already under version control
+A         _support.rhtml
+john-griffiths-computer:~/trunk/app/views/shared indiehead$ cd ..
+john-griffiths-computer:~/trunk/app/views indiehead$ cd ..
+john-griffiths-computer:~/trunk/app indiehead$ cd ..
+john-griffiths-computer:~/trunk indiehead$ svn commit 'h  -m n 'note'
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+Sending        app/views/note/edit.rhtml
+Sending        app/views/note/new.rhtml
+Adding         app/views/shared/_support.rhtml
+Transmitting file data ...
+Committed revision 41.
+john-griffiths-computer:~/trunk indiehead$ svn commit -m 'note'                    cap deploy_with_migrations
+  * executing task deploy_with_migrations
+  * executing task update_code
+  * querying latest revision...
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+Enter passphrase for key '/Users/indiehead/.ssh/id_rsa': 
+  * executing "if [[ ! -d /var/www/apps/atompad/releases/20070809155908 ]]; then\n              svn co --no-auth-cache   -q -r41 svn+ssh://deploy@atompad.com/var/www/apps/atompad/repos/trunk /var/www/apps/atompad/releases/20070809155908 &&\n              (test -e /var/www/apps/atompad/revisions.log || (touch /var/www/apps/atompad/revisions.log && chmod 666 /var/www/apps/atompad/revisions.log)) && echo `date +\"%Y-%m-%d %H:%M:%S\"` $USER 41 20070809155908 >> /var/www/apps/atompad/revisions.log;\n            fi"
+    servers: ["atompad.com"]
+Enter password for /users/indiehead/.ssh/id_rsa: 
+    [atompad.com] executing command
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+Password: 
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+ ** [out :: atompad.com] deploy@atompad.com's password:
+ ** [out :: atompad.com] subversion is asking for a password
+    command finished
+  * executing task set_permissions
+  * executing "chmod -R g+w /var/www/apps/atompad/releases/20070809155908"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "rm -rf /var/www/apps/atompad/releases/20070809155908/log /var/www/apps/atompad/releases/20070809155908/public/system &&\n    ln -nfs /var/www/apps/atompad/shared/log /var/www/apps/atompad/releases/20070809155908/log &&\n    ln -nfs /var/www/apps/atompad/shared/system /var/www/apps/atompad/releases/20070809155908/public/system"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "test -d /var/www/apps/atompad/shared/pids && \n    rm -rf /var/www/apps/atompad/releases/20070809155908/tmp/pids && \n    ln -nfs /var/www/apps/atompad/shared/pids /var/www/apps/atompad/releases/20070809155908/tmp/pids; true"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "TZ=UTC find /var/www/apps/atompad/releases/20070809155908/public/images /var/www/apps/atompad/releases/20070809155908/public/stylesheets /var/www/apps/atompad/releases/20070809155908/public/javascripts -exec touch -t 200708091559.33 {} \\;; true"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task after_update_code
+  * executing task migrate
+  * executing "ls -x1 /var/www/apps/atompad/releases"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "cd /var/www/apps/atompad/releases/20070809155908 && rake RAILS_ENV=production  db:migrate"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+ ** [out :: atompad.com] (in /var/www/apps/atompad/releases/20070809155908)
+ ** [out :: atompad.com] Rails Error: Unable to access log file. Please ensure that /var/www/apps/atompad/releases/20070809155908/config/../log/production.log exists and is chmod 0666. The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+    command finished
+  * executing task symlink
+  * executing "ln -nfs /var/www/apps/atompad/releases/20070809155908 /var/www/apps/atompad/current"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task after_symlink
+  * executing task set_perms_for_mongrel_dirs
+  * executing "sudo  chgrp -R app_atompad /var/www/apps/atompad/current/tmp /var/www/apps/atompad/shared"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chmod -R g+w /var/www/apps/atompad/current/tmp /var/www/apps/atompad/shared"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chown mongrel_atompad /var/www/apps/atompad/shared/log/mongrel.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chgrp app_atompad /var/www/apps/atompad/shared/log/mongrel.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chown mongrel_atompad /var/www/apps/atompad/shared/log/production.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing "sudo  chgrp app_atompad /var/www/apps/atompad/shared/log/production.log || exit 0"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+    command finished
+  * executing task restart
+  * executing task restart_mongrel_cluster
+  * executing "sudo  mongrel_rails cluster::restart -C /etc/mongrel_cluster/atompad.yml"
+    servers: ["atompad.com"]
+    [atompad.com] executing command
+ ** [out :: atompad.com] Stopping 2 Mongrel servers...
+ ** [out :: atompad.com] Starting 2 Mongrel servers...
+    command finished
+john-griffiths-computer:~/trunk indiehead$ 

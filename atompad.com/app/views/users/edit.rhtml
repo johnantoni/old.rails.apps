@@ -1,0 +1,38 @@
+<img src="/images/iStock_000002818582XSmall.jpg" style="float:right;"/>
+
+<h2>Edit your Profile</h2>
+
+<%= error_messages_for 'user' %>
+
+<% form_for(:user, :url => {:id => @user, :action => "update" }) do %>
+
+<p>Email Address<br />
+<%= text_field :user, :login, 'size'=>20, :style=>'border:1px solid red; padding:2px;' %>
+</p>
+
+<p>
+<%= button_to_function "Change Password", :action => "password", :id => @user %>
+</p>
+
+<p>Firstname / Surname<br />
+<%= text_field :user, :firstname, "size"=>15, :style=>'border:1px solid red; padding:2px;' %> 
+<%= text_field :user, :lastname, "size"=>15, :style=>'border:1px solid red; padding:2px;' %>
+</p>
+
+<p>About You<br />
+<%= text_area :user, :profile, 'rows'=>7, 'cols'=>27 %>
+</p>
+
+<p>Your Favorite Tags<br />
+<%= text_field :user, :tag_list, "size"=>25 %>
+</p>
+
+<p>
+<%= submit_tag 'Update' %>     
+ or
+<%= button_to_function "Go Back", "window.location='/users/index/'" %>
+ or 
+<%= button_to_function "View Profile", "window.location='/users/#{@user.id}show/'" %>
+</p>
+
+<% end -%>

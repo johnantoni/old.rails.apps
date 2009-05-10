@@ -1,0 +1,33 @@
+<h2>Compose Message</h2>
+
+<%= ezm_message_menu -%>
+
+<%= error_messages_for 'message' %>
+
+<%= flash[:notice] %> 
+
+<fieldset>
+
+   <legend>Send Message</legend>
+
+   <% form_for :message, :url => {:action => :send_message} do |form| %>
+     <p>
+       <label for="message_recepient" >Recipient:</label>
+	<%= select(:message, :recipient, current_user.friends.collect {|u| [u.login]} )%>
+     </p>
+   
+     <p>
+       <label for="message_subject" >Subject:</label>  
+       <%= form.text_field :subject, :size => 40 %>
+     </p>
+     
+     <p>
+       <label for="message_body" >Message:</label>  
+       <%= form.text_area :body %>
+     </p>
+
+     <%= submit_tag "Send Message" %>
+
+   <% end %>
+
+</fieldset>

@@ -1,0 +1,5 @@
+<% for @reminder in @reminders %>
+<% if @reminder.user_id == self.current_user.id %>
+	<%= render :partial => 'reminder' %>
+<% end %>
+<% end %>

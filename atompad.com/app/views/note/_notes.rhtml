@@ -1,0 +1,5 @@
+<% for @note in @notes %>
+<% if @note.user_id == self.current_user.id %>
+	<%= render :partial => 'note' %>
+<% end %>
+<% end %>

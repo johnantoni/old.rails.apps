@@ -1,0 +1,11 @@
+<h3>Previous Version Edits</h3>
+
+<hr />
+
+<p>
+	<ul>
+	<% for @version in @note.versions.reverse %> 
+		<%= render :partial => 'version' %>
+	<% end %>
+	</ul>
+</p>

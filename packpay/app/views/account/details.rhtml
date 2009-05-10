@@ -1,0 +1,30 @@
+<h2>Details for <%= @user.profile.firstname %> <%= @user.profile.lastname %></h2>
+
+<% if not @user.default_image.blank? %>
+	<%= link_to image_tag(@user.default_image.public_filename(:thumb)), :action => 'details', :id => @user %>
+<% else %>                      
+	<%= link_to image_tag("/images/no_photo.gif"), :action => 'details', :id => @user %>
+<% end %>
+
+<div styl="width:50%;">
+	<h3>Details</h3>
+
+	<p>About Yourself: <br/>
+	<strong><%= @user.profile.about %></strong></p>
+
+	<p>Date of Birth: <strong>Age <%= age(@user.profile.dob) %> (<%= @user.profile.dob %>)</strong></p>
+
+	<p>Country: <strong><%= @user.profile.country %></strong></p>
+</div>
+
+<h3>Photos</h3>
+
+<p>
+<% for image in self.current_user.images %>
+	<%= link_to image_tag(image.public_filename(:thumb)), :controller => "image", :action => 'show', :id => image %>
+<% end %>
+</p>
+                                             
+<p>
+<input type=button value="Go Back" onClick="history.go(-1)">
+</p>

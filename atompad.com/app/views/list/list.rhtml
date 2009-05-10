@@ -1,0 +1,14 @@
+<img src="/images/iStock_000003756206XSmall.jpg" style="float:right;" />
+	
+<h2>Your Lists</h2>
+
+<%= error_messages_for 'list' %>
+
+<% form_tag :action => 'create' do %>
+	<p><%= text_field 'list', 'title', 'size' => 15 %> <%= submit_tag "Create List" %></p>
+<% end %>
+
+<h3>Current Lists</h3>
+<ul id="lists">
+	<%= render :partial => 'lists' %>
+</ul>                

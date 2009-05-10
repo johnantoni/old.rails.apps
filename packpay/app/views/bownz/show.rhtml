@@ -1,0 +1,20 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+<h2><%= @chat.name %></h2>
+
+<p>Subject: <%= @category.name %>
+
+<h3>Comments:</h3>
+
+<ul>
+<% for @comment in @comments %>
+	<li><%= @comment.comment %></li>
+<% end %>
+</ul>
+
+<h3>Add Comment</h3>
+
+<%= render :partial => '/bownz/comment' %>
+
+<%= button_to_function "Go Back", "window.location='/account/index/'" %>
+
+</div>

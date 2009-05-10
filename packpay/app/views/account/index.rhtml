@@ -1,0 +1,27 @@
+<% if not logged_in? %>
+
+<div style="width: 98%; vertical-align: top; border: 1px solid #999; color: black; text-align: left; margin: 0% 1% 1% 1%;">
+	<%= render :partial => '/account/recent' %>
+</div>
+
+<div style="width: 48%; float:right; vertical-align: top; border: 1px solid #999; color: black; text-align: left; margin: 0% 1% 0% 1%;">
+	<%= render :partial => '/account/comments' %>
+</div>
+<div style="width: 48%; vertical-align: top; border: 1px solid #999; color: black; text-align: left; margin: 0% 1% 0% 1%;">
+	<%= render :partial => '/account/popular' %>
+</div>
+	   
+<% else %>
+
+<div style="width: 100%; vertical-align: top; border: 1px solid #999; color: black; text-align: left; padding:2px;">
+	<%= render :partial => '/account/recent' %>
+</div>
+
+<div style="width: 50%; float:right; vertical-align: top; border: 1px solid #999; color: black; text-align: left; padding:2px;">
+	<%= render :partial => '/account/comments' %>
+</div>
+<div style="width: 50%; vertical-align: top; border: 1px solid #999; color: black; text-align: left; padding:2px;">
+	<%= render :partial => '/account/popular' %>
+</div>
+
+<% end %>

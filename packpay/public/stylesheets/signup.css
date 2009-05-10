@@ -1,0 +1,137 @@
+body { 
+	background-color: #000; 
+	color: #FFF; 
+	word-spacing:1px;
+  	line-height: 17px;
+	padding-top: 0px;
+	margin: 1% 5% 1% 5%;
+}
+
+body, p, ol, ul, td {
+  	font-size: 11px;
+  	line-height: 19px;
+}
+
+body b {
+	font-size:11px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a, a:visited { color: #0080FF; text-decoration:none; }
+a:hover { color: #0080FF; text-decoration:underline;  }
+
+img {
+	padding:0px; 
+	margin-left:1px;
+	margin-bottom:1px; 
+}
+                            
+#header {
+	padding:3px; 
+	width:20%             
+	border-bottom: 3px solid #999;
+}
+
+#footer {
+	width: 60%;
+	margin: 0% 20% 0% 20%;
+	bottom:auto;
+	text-align:center;
+	font-size:0.90em; 
+	padding-top:3px;
+	color: #000;
+	clear:both;
+}
+
+#footer a { color: #000; }
+#footer a:visited { color: #000; }
+#footer a:hover { color: #000; }
+                             
+.content {
+	background-color:#990033;
+	width:99%; 
+	position:absolute; 
+	z-index:2; 
+	margin-top:65px;
+	border:0px; 
+}
+
+
+
+/* rails styling */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #000;
+}
+
+#errorExplanation p {
+  color: #000;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation {
+  color: #000;
+	
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+.notification {
+	width: 12%;
+	color: #000;
+	padding:2px;
+	text-align:left;
+	/*font-weight:bold;*/
+	font-size:12px;
+	float:left;
+}

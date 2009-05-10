@@ -1,0 +1,7 @@
+<h2>Most Popular</h2>
+
+<ul>
+<% for @chat in @chats %>
+	<li><%= link_to @chat.name, :controller => 'bownz', :action => 'show', :id => @chat %></li>
+<% end %>
+</ul>

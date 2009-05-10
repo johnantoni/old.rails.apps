@@ -1,0 +1,7 @@
+<li>Version <%= @version.version %><br />
+	<%= @version.updated_at.strftime(" %a %d %b %y, %I:%M %p") %><br />
+<%#= link_to '[Show]', {:action => 'version', :id => @note.id, :ver => @version.id }, :popup => ['Version', 'height=480,width=640'] %>
+<%= link_to '[Revert to this version]', 
+	:action => 'revert_to_version', 
+	:version_id => @version.id, 
+	:note_id => @note %></li>

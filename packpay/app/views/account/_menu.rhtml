@@ -1,0 +1,22 @@
+<% if logged_in? %>
+
+<div id="nav-menu">
+<ul>
+    <li><%= link_to "My", :controller => "account", :action => "profile" %></li>   
+	<li><%= link_to "Friends", :controller => "account", :action => "inbox" %></li>
+    <li><%= link_to "World", :controller => "account", :action => "index" %></li>
+    <li><%= link_to "Create Bownz", :controller => "bownz", :action => "create" %></li>
+</ul>
+</div>
+
+<% else %>
+
+<div id="nav-menu">
+<ul>
+    <li><%= link_to "My", :controller => "account", :action => "index" %></li>
+	<li><%= link_to "Friends", :controller => "account", :action => "index" %></li>
+    <li><%= link_to "World", :controller => "account", :action => "index" %></li>
+</ul>
+</div>
+
+<% end %>

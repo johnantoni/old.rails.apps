@@ -1,0 +1,11 @@
+<div class="box">
+<% if not @their.image.nil? %>
+<%= image_tag(url_for_file_column(@their, 'image', 'square')) %>
+<% else %>
+<img src="/images/no_photo.gif" alt="no photo">
+<% end %>                                                       
+<br />
+&nbsp;&nbsp;<%= @their.firstname %> <%= @their.lastname %><br />
+&nbsp;&nbsp;Age: <%= age(@their.dob) %><br />
+&nbsp;&nbsp;<%= button_to_function "View Details", "window.location='/account/details/#{@their.id}'" %><br/>
+</div>

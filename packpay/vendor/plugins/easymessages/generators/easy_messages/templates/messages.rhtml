@@ -1,0 +1,25 @@
+<h1>Messages</h1>
+<div><%%= flash[:notice] %></div>
+<%%= ezm_message_menu -%>
+
+<%% form_for :message, :url => {:action => :delete_message} do |form| %>
+    <table border="1">
+      <tr>
+        <th></th>
+        <th>Subject</th>
+        <th><%%=h ezm_sender_or_receiver_label %></th>
+        <th>Sent</th>
+      </tr>
+    <%% @messages.each do |m|  %>
+      <tr>
+        <td><%%= ezm_delete_check_box(m) %></td>
+        <td><%%= ezm_link_to_message(m) %></td>
+        <td><%%=h ezm_sender_or_receiver(m) %></td>
+        <td><%%=h ezm_sent_at(m) %></td>  
+      </tr>
+    <%% end %>
+    <tr>
+      <td colspan="4"><%%= submit_tag "Delete" %></td>
+    </tr>
+    </table>
+<%% end %>

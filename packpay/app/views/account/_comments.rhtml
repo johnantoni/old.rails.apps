@@ -1,0 +1,7 @@
+<h2>Comments</h2>
+
+<ul>
+<% for @comment in @comments %>
+	<li><%= link_to @comment.comment, :controller => 'bownz', :action => 'show', :id => @comment.chat_id %></li>
+<% end %>
+</ul>

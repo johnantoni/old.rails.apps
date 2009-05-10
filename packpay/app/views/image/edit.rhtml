@@ -1,0 +1,17 @@
+<h2>Change Photo</h2>
+  
+<% form_for(:image, :url => {:id => @image, :action => "update" }, :html => { :multipart => true }) do |f| -%>
+                                     
+<p>Replace Photo:<br/> 
+<%= image_tag @image.public_filename(:thumb) %> 
+<br/>
+with <%= f.file_field :uploaded_data %>
+</p>
+
+<p>
+<%= f.submit 'Save Changes' %>
+ or 
+<%= button_to_function "Go Back", "window.location='/image/show/#{@image.id}'" %>
+</p>
+ 
+<% end -%> 

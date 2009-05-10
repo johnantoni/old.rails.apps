@@ -1,0 +1,22 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+
+<h2>Login to your Account</h2>
+
+<p>
+<% form_tag :controller => 'account', :action => "login" do %>
+	Email <%= text_field_tag 'login', @login, :size => '10' %>
+	&nbsp;
+	Password <%= password_field_tag 'password', nil, :size => '10' %>
+	&nbsp;
+	Remember me <%= check_box_tag 'remember_me', checked='checked', value='1' %>	
+	&nbsp;	
+	<%= submit_tag 'Login' %>
+	<br />               		
+	<br />               		
+	<%= button_to_function "Sign Up", "window.location='/account/signup/'" %>
+	&nbsp;
+	<%= button_to_function "Forgot your Password ?", "window.location='/account/forgot_password/'" %>
+<% end %>
+</p>
+
+</div>

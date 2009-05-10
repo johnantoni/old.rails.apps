@@ -1,0 +1,35 @@
+<div style="width:70%; border: 1px solid #999; padding:5px; margin: 0% 15% 0% 15%;">
+<h2>Sign-up now for your free account</h2>
+
+<%= error_messages_for :user %>
+<%= error_messages_for :profile %>
+
+<% form_tag( { :action => 'signup' } ) do %>
+
+<p>Email: <br />
+	<%= text_field (:user, :login, "size" => 20, :style=>'border:1px solid red; padding:2px;') %></p>
+
+<p>Password: <br />
+	<%= password_field :user, :password, "size" => 20, :style=>'border:1px solid red; padding:2px;' %> 
+	Confirm: 
+	<%= password_field :user, :password_confirmation, "size" => 20, :style=>'border:1px solid red; padding:2px;' %></p>
+
+<p>Fullname: <br />
+	<%= text_field :profile, :firstname, "size" => 25, :style=>'border:1px solid red; padding:2px;' %> 
+	<%= text_field :profile, :lastname, "size" => 25, :style=>'border:1px solid red; padding:2px;' %></p>
+
+<p>Date of Birth: <br />
+	<%= date_select :profile, :dob, :style=>'border:1px solid red; padding:2px;', :start_year => 1950 %></p>
+
+<p>Country <br />
+	<%= country_code_select(:profile, :country, priority_countries=[{:code=>'GB',:name=>'Britain (UK)'}, {:code=>'US',:name=>'United States'}],{:selected=>'GB',:include_blank=>true}) %></p>
+
+<p>Post Code / Zip Code <br />
+	<%= text_field :profile, :postcode, "size" => 10 %></p>
+
+<p>Agree to Legal Terms <%= check_box :profile, :legal_terms, :checked => 'checked', :style=>'border:1px solid red; padding:2px;' %></p>
+
+<p><%= submit_tag 'Register' %></p>
+	
+<% end -%>
+</div>

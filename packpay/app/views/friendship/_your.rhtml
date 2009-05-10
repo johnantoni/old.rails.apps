@@ -1,0 +1,12 @@
+<div class="box">
+<% if not @your.image.nil? %>
+<%= image_tag(url_for_file_column(@your, 'image', 'square')) %>
+<% else %>
+<img src="/images/no_photo.gif" alt="no photo">
+<% end %>
+<br />
+&nbsp;&nbsp;<%= @your.firstname %> <%= @your.lastname %><br />
+&nbsp;&nbsp;Age: <%= age(@your.dob) %><br />
+&nbsp;&nbsp;<%= link_to_remote "[ Remove from Cute List ]", :url => { :action => 'remove_friend', :id => @your } %><br/>
+&nbsp;&nbsp;<%= button_to_function "View Details", "window.location='/account/details/#{@your.id}'" %><br/>
+</div>

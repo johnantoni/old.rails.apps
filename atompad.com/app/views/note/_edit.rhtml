@@ -1,0 +1,5 @@
+<p><%= error_messages_for 'note' %></p>
+
+<p>Title: <%= text_field 'note', 'title', 'size' => 15 %></p>
+<p>Body:<br /><%= text_area 'note', 'body', 'rows' => 5, 'cols' => 27 %></p>
+<p>Tags: <%= text_field 'note', 'tag_list', 'size' => 20 %></p>

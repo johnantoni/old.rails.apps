@@ -1,0 +1,220 @@
+body { 
+	background-color: #000; 
+	color: #FFF; 
+  	font-family: verdana, arial, helvetica, sans-serif;
+  	font-size: 11px;
+  	line-height: 17px;
+	padding-top: 5px;
+}
+
+body, p, ol, ul, td {
+  	font-size: 11px;
+  	line-height: 19px;
+}
+
+body b {
+	font-size:11px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+input {
+	font-size: 0.95em;
+	background-color: #FFFFFF;
+}
+
+a { color: #000; text-decoration:none; }
+a:visited { color: #222; text-decoration:none; }
+a:hover { color: #222; text-decoration:underline;  }
+
+img {
+	border:1px solid #FFF;
+	padding:2px; 
+	margin:5px; 
+	background-color:#000;
+}
+
+.even { background: #CDEB8B; }
+.odd { background: #FFFF88; }
+
+#header {
+	padding:3px; 
+	width:95%
+	border-bottom: 3px solid #999;
+}
+
+#footer {
+	position:absolute;
+	width: 60%;
+	margin: 0% 20% 0% 20%;
+	bottom:auto;
+	text-align:center;
+	font-size:0.85em; 
+	padding-top:5px;
+	color: #808080;
+}
+
+#footer a { color: #808080; }
+#footer a:visited { color: #808080; }
+#footer a:hover { color: #808080; }
+
+#nav {
+	width:100%;
+	border:10px;
+}
+
+.title {
+	font-size:32px; 
+	display:inline;
+	background-color: #B02B2C;
+}
+
+.tag_text {
+	font-size:22px; 
+	display:inline;
+	background-color: #B02B2C;
+}
+
+h2 {
+	font-size: 17px;
+	display:inline;
+	font-weight:bold;
+}                   
+
+h3 {
+	font-style:italic;
+	text-decoration:none;
+	font-size:13px;
+	font-weight:normal;
+}
+              
+
+/* rounded corners */
+.roundedcornr_primary_606839 {
+	border:0px; 
+	margin:20px; 
+	font-size:0.8em;
+   	background: #ffffff;
+	color:#000000;
+}
+.roundedcornr_top_606839 div {
+   background: url(/images/roundedcornr_606839_tl.png) no-repeat top left;
+}
+.roundedcornr_top_606839 {
+   background: url(/images/roundedcornr_606839_tr.png) no-repeat top right;
+}
+.roundedcornr_bottom_606839 div {
+   background: url(/images/roundedcornr_606839_bl.png) no-repeat bottom left;
+}
+.roundedcornr_bottom_606839 {
+   background: url(/images/roundedcornr_606839_br.png) no-repeat bottom right;
+}
+.roundedcornr_top_606839 div, .roundedcornr_top_606839, 
+.roundedcornr_bottom_606839 div, .roundedcornr_bottom_606839 {
+   width: 100%;
+   height: 15px;
+   font-size: 1px; 
+}
+.roundedcornr_content_606839 { min-height:400px; margin: 0 15px; }
+
+.roundedcornr_box_145115 {
+	width:900px;
+	min-height:500px;
+	background-color: #B02B2C;
+	color:#FFFFFF; 
+	margin-left: auto;
+	margin-right: auto;	
+}
+.roundedcornr_top_145115 div {
+   background: url(/images/roundedcornr_145115_tl.png) no-repeat top left;
+}
+.roundedcornr_top_145115 {
+   background: url(/images/roundedcornr_145115_tr.png) no-repeat top right;
+}
+.roundedcornr_bottom_145115 div {
+   background: url(/images/roundedcornr_145115_bl.png) no-repeat bottom left;
+}
+.roundedcornr_bottom_145115 {
+   background: url(/images/roundedcornr_145115_br.png) no-repeat bottom right;
+}
+.roundedcornr_top_145115 div, .roundedcornr_top_145115, 
+.roundedcornr_bottom_145115 div, .roundedcornr_bottom_145115 {
+   width: 100%;
+   height: 15px;
+   font-size: 1px;
+}
+.roundedcornr_content_145115 { min-height:500px; margin: 0 15px; }
+
+
+/* rails styling */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #000;
+}
+
+#errorExplanation p {
+  color: #000;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation {
+  color: #000;	
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+.notification {
+	color: #EEEEEE;
+	margin-top:7px;
+	text-align:left;
+	font-size:12px;
+}

@@ -1,0 +1,10 @@
+<h3>View Change to Note</h3>
+
+<p><i>Version:</i> <%= @version.id %></p>
+<p><i>Updated:</i> <%#= @version.updated_at.strftime(" %a %d %b %y, %I:%M %p") %></p>
+
+<h3>Content</h3>
+
+<p><i>Title:</i> <%#= @version.title %></p>
+<p><i>Body:</i><br /><%#= textilize(@version.body) %></p>
+<p><i>Tags:</i> <%#= @version.tag_list %></p>

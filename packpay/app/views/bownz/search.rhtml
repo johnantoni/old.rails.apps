@@ -1,0 +1,10 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+<h2>Search Bownz for : <%= @search %></h2>
+
+<ul>
+<% for @chat in @chats %>
+	<li><%= link_to @chat.name, :controller => 'bownz', :action => 'show', :id => @chat %></li>
+<% end %>
+</ul>
+
+</div>

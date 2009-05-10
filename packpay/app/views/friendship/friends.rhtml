@@ -1,0 +1,13 @@
+<h2>Friends</h2>
+
+<h3>Who are your friends...</h3>
+
+<p>
+<% for @your in @yours do %>
+	<%= render :partial => 'your' %>	
+<% end %>&nbsp;
+</p>
+
+<p>
+<%= button_to_function "Go Back", "window.location='/index/'" %>
+</p>

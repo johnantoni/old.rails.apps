@@ -1,0 +1,18 @@
+<h2>Add Items to List</h2>
+
+<p>	
+	<% form_remote_tag :url => { :action => "add_item", :id => @list },
+	 	:update => "items", 
+		:success => visual_effect(:highlight, "items") do %>
+	  <%= text_field "item", "body", :value => nil %> <%= submit_tag "Add" %>
+  	<% end %>
+</p>
+
+<h3>Items in List: <%= @list.title.capitalize %></h3>
+<ul id='items'>
+	<%= render :partial=>'items' %>
+</ul>
+
+<p>
+<%= button_to_function "Go Back", "window.location='/list/list/'" %>
+</p>

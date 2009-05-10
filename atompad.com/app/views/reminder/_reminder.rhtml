@@ -1,0 +1,8 @@
+<li id="item_<%= @reminder.id %>" >
+	<%= in_place_editor_field :reminder, :title %><br />
+	<%= @reminder.date.strftime("%a %d %b %y, %I:%M %p") %><br />
+	
+	<%= link_to '[Edit]', :action => 'edit', :id => @reminder %>
+	<%= link_to_remote "[Destroy]", :update => "reminders",
+	    :url => { :action => "destroy", :id => @reminder.id }, :confirm => 'Are you sure?' %>
+</li>

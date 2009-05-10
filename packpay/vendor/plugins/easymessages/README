@@ -1,0 +1,82 @@
+Easy_Messages
+=================
+
+Easy_Messages adds private messaging between the users on your site, keeping
+them in-site instead of leaving to check their email.  I based this on Matt Beedle's
+acts_as_emailable (http://matt-beedle.com/2007/06/05/acts_as_emailable/).  This plugin 
+also conatins extension to acts_as_authenticated to provide the housekeeping functions
+missing for aae.
+
+Installation
+============
+Installation instructions at at http://www.samuelschroeder.com/. 
+
+=The code is hosted at RubyForge.
+
+svn://rubyforge.org/var/svn/easymessages/branches/RB-0.5
+
+=The run the generator to create the model, migration, helper, and views.
+
+script/generate easy_messages message account
+
+=Note: Easy_Messages assumes you have Acts_As_Authenticated installed with the defaults of a model named User and a controller named Account. And you must use the above line exactly. I have grand aspirations of making the generator fully dynamic someday but for now you’ll have to deal.
+
+The generator should produce this output.
+
+exists app/models/
+exists app/helpers/
+exists app/views/account
+create app/models/message.rb
+create app/helpers/easy_messages_helper.rb
+create app/views/account/message_view.rhtml
+create app/views/account/messages.rhtml
+create app/views/account/send_message.rhtml
+exists db/migrate
+create db/migrate/###_create_easy_messages_messages.rb
+
+Yes, I realize the redundant naming but once/if I get the dynamic generator going it would say ###_create_easy_messages_[MessageClassNames]s.
+
+=Now you have to do three manual changes to your code. First, add "easy_messages" to apps/model/user.rb.
+
+   1. class User < ActiveRecord::Base  
+   2.   easy_messages  
+   3.   # The rest of your class  
+   4.   #  
+   5.   #  
+   6. end  
+
+Second, add "authenticated_commands" to apps/controllers/account_controller.rb.
+
+   1. class AccountController < ApplicationController  
+   2.   authenticated_commands  
+   3.   # The rest of your class  
+   4.   #  
+   5.   #  
+   6. end  
+
+Finally, you need to copy the named routes from vendor/plugins/easy_messages/config/easy_messages_named_routes.rb to config/routes.rb.
+view plainprint?
+
+   1. # Add these names routes to your project's config/routes.rb  
+   2.   
+   3. map.with_options :controller => 'account' do |m| 
+   4. m.compose '/account/message/send', :action => 'send_message' 
+   5. m.delete 'account/message/delete/:id', :action => 'delete_message' 
+   6. m.inbox '/account/inbox', :action => 'inbox' 
+   7. m.outbox '/account/outbox', :action => 'outbox' 
+   8. m.trashbin '/account/trashbin', :action => 'trash_bin' 
+   9. m.reply '/account/message/reply/:id', :action => "reply_to_message" 
+  10. m.view '/account/message/view/:id', :action => 'view_message'  
+  11. end  
+
+That should be it for the setup. So start your development server and point your brower to..
+
+http://localhost:3000/account/inbox
+
+There is also a complete RDoc listing in vendor/plugins/easy_messages/doc
+
+Thanks to...
+
+**Matt Beedle (http://matt-beedle.com/) for writing and releasing Acts_As_Emailable (http://matt-beedle.com/2007/06/05/acts_as_emailable/).
+
+** Rick Olson (http://techno-weenie.net/) for writing and releasing the kick-ass Acts_As_Authenticated plug-in (http://technoweenie.stikipad.com/plugins/show/Acts+as+Authenticated) . It was been such a help when starting new projects.

@@ -1,0 +1,12 @@
+<h2>Change your Reminder</h2>
+
+<% form_tag :action => 'update', :id => @reminder do %>
+	<p>Name: <%= text_field 'reminder', 'title'  %></p>
+	<p>Date: <%= date_select 'reminder', 'date' %></p>
+	
+	<p>
+		<%= submit_tag "Update" %> 
+		<%= link_to '[Cancel]', :action => 'list' %>
+	</p>
+
+<% end %>

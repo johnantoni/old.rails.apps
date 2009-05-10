@@ -1,0 +1,24 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+
+<h2>Your Photo</h2>
+
+<p><%= image_tag @image.public_filename %></p>
+
+<p>
+	                        
+<%= button_to_function "Change Photo", "window.location='/image/edit/#{@image.id}'" %>
+ or 
+
+<% if not @image.default %>
+	<%= link_to "Use for Profile", :action => "set", :id => @image %>
+<% end %>
+
+or
+
+<%= button_to_function "Go Back", "window.location='/account/index'" %>                      
+ or           
+<%= button_to "Delete Photo", :action => "destroy", :id => @image %>
+
+</p>
+
+</div>

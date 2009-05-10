@@ -1,0 +1,4 @@
+<li id="item_<%= @item.id %>" >
+	<%= link_to_remote "[Destroy]", :update => "items",
+    :url => { :action => "destroy_item", :id => @item.id, :list => @item.list_id } %> <%= in_place_editor_field :item, :body %><br />
+</li>

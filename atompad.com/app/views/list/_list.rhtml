@@ -1,0 +1,5 @@
+<li id="item_<%= @list.id %>" >
+	<%= in_place_editor_field :list, :title %><br />
+	<%= link_to '[Show]', :action => 'show', :id => @list %>
+	<%= link_to '[Destroy]', { :action => 'destroy', :id => @list }, :confirm => 'Are you sure?', :method => :post %>
+</il>

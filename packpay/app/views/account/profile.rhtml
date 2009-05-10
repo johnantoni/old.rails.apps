@@ -1,0 +1,47 @@
+<div style="width:90%; border: 1px solid #999; padding:5px; margin: 0% 5% 0% 5%;">
+
+<h2>Your Profile</h2>
+
+<%= error_messages_for 'profile' %>
+
+<% form_for(:profile, :url => {:id => @profile, :action => "profile_update" }) do %>
+
+<p>Fullname: <br />
+<%= text_field :profile, :firstname, "size" => 25 %>
+<%= text_field :profile, :lastname, "size" => 25 %></p>
+
+<p>                                                             
+<%= button_to_function "Change Password", "window.location='/account/password'" %>
+</p>
+
+<p>Photo: <br />
+<% if not self.current_user.default_image.blank? %>
+    <%= link_to image_tag(self.current_user.default_image.public_filename(:thumb)), :controller => 'image', :action => 'show', :id => self.current_user.default_image %>
+<% else %>
+	<img src="/images/no_photo.gif" alt="no photo">
+<% end %>                                          
+<br />                                
+<%= button_to_function "Choose Another Photo ?", "window.location='/image/list'" %>
+</p>
+
+<p>About Yourself: <br />
+	<%= text_area :profile, :about, 'rows' => 10, 'columns' => 40 %></p>
+
+<p>Date of Birth: <br />
+	<%= date_select :profile, :dob, :start_year => 1950 %></p>
+
+<p>Country: <br />
+<%= country_code_select(:profile, :country, priority_countries=[{:code=>'GB',:name=>'Britain (UK)'}, {:code=>'US',:name=>'United States'}],{:selected=>'GB',:include_blank=>true},{:style=>'border:1px solid red;'}) %></p>
+
+<p>Post Code / Zip Code:
+	<br /><%= text_field :profile, :postcode, "size" => 10 %></p>
+		
+<p>
+<%= submit_tag 'Save your Profile' %>
+ or 
+<%= button_to_function "Go Back", "window.location='/account/index/'" %>
+</p>
+
+<% end %>
+
+</div>

@@ -1,0 +1,4 @@
+<p><i>Title:</i> <%= @note.title %></p>
+<p><i>Body:</i><br /><%= @note.body %></p>
+<p><i>Tags:</i> <%= @note.tag_list %></p>
+<p><i>Last Updated:</i> <%= @note.updated_at.strftime(" %a %d %b %y, %I:%M %p") %></p>

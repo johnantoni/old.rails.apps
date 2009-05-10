@@ -1,0 +1,16 @@
+<% if logged_in? %>
+<div id="nav-menu">
+<ul>	
+	<li><%= link_to 'Home', {:controller => 'users'} %></li>
+	<li><%= link_to 'Profile', {:controller => 'users', :action => 'edit', :id => self.current_user.id } %></li>
+	<li><%= link_to 'Notes', {:controller => 'note'} %></li>
+	<li><%= link_to 'Lists', {:controller => 'list'} %></li>
+	<li><%= link_to 'Reminders', {:controller => 'reminder'} %></li>
+	<li><%= link_to 'News', {:controller => 'guide', :action => 'news'} %></li>	
+	<li><%= link_to "Logout", {:controller => 'users', :action => 'logout'} %></li>
+</ul> 
+<br/>
+</div>
+<% else %>
+	<%= render :partial => '/users/login' %>
+<% end %>

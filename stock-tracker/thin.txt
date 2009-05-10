@@ -1,0 +1,2 @@
+rake thin:cluster:start RAILS_ENV=production SIZE=1 PORT=8200
+rake thin:cluster:stop RAILS_ENV=production SIZE=1 PORT=8200

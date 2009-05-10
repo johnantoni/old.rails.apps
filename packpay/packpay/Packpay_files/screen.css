@@ -1,0 +1,213 @@
+body { 
+	background-color: #000; 
+	color: #FFF; 
+  	font-family: verdana, arial, helvetica, sans-serif;
+  	font-size: 11px;
+  	line-height: 17px;
+	padding-top: 5px;
+}
+
+body, p, ol, ul, td {
+  	font-size: 11px;
+  	line-height: 19px;
+}
+
+body b {
+	font-size:11px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+input {
+	font-size: 1.0em;
+	background-color: #FFFFFF;
+}
+
+a { color: #FFF; text-decoration:none; }
+a:visited { color: #FFF; text-decoration:none; }
+a:hover { color: #222; text-decoration:underline;  }
+
+.signup {
+	border: 1px solid #999; padding:3px;
+}
+
+.signup a:hover {
+	background-color: #FFF;
+	color: #000;           
+}
+
+.button {
+	border: 1px solid #999; 
+	padding:5px;
+	margin: 1px;
+	font-size: 0.95em;
+	font-weight: bold;
+}
+
+.button a:hover {
+	background-color: #FFF;
+	color: #000;           
+}
+                     
+.about {
+	margin: 0% 10% 0% 10%; 
+	width:80%;
+	text-align:center;
+}
+
+.framed {
+	margin: 0% 10% 0% 10%; 
+	width:80%; 
+}
+
+.signup_form {
+	margin: 0% 20% 0% 20%; 
+	width:60%; 
+	padding:10px; 
+	border: 1px solid #999;
+}
+
+img {
+	border:5px solid #333; 
+	padding:1px; 
+	margin:5px; 
+	background-color:#000;
+}
+                            
+#menu {               
+	width:500px;
+	margin-left:340px;
+	position:absolute;
+	z-index:2;
+	margin-top:-1px;
+}
+
+#menu li {
+	display: inline;
+	/*padding-right: 10px;*/
+	font-size: 0.90em;
+}
+
+.even { background: #CDEB8B; }
+.odd { background: #FFFF88; }
+
+#main { 
+	width:800px;
+	padding:5px;
+	min-height:100%; 
+	margin-left: auto;
+	margin-right: auto;	
+	/*margin: 0% 10% 0% 10%;*/
+	background-color: #000;
+	color:#FFF; 
+	position:relative;
+}
+
+#title { font-size:1.9em; margin:5px; font-variant:small-caps; }
+
+#header {
+	padding:3px; 
+	width:95%
+	border-bottom: 3px solid #999;
+}
+
+#footer {
+	position:absolute;
+	width: 60%;
+	margin: 0% 20% 0% 20%;
+	bottom:auto;
+	text-align:center;
+	font-size:0.85em; 
+	padding-top:10px;
+	color: #808080;
+}
+
+#footer a { color: #808080; }
+#footer a:visited { color: #808080; }
+#footer a:hover { color: #808080; }
+
+#primary {
+	min-height:100%; 
+	padding-left:10px; 
+	border:0px; 
+	margin:20px; 
+	font-size:0.8em;
+}
+
+
+/* rails styling */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #000;
+}
+
+#errorExplanation p {
+  color: #000;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation {
+  color: #000;
+	
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+.notification {
+	width: 12%;
+	color: #EEEEEE;
+	padding:2px;
+	text-align:left;
+	/*font-weight:bold;*/
+	font-size:12px;
+	float:left;
+}

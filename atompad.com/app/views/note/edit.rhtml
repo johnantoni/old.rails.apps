@@ -1,0 +1,18 @@
+<img src="/images/iStock_000003756206XSmall.jpg" style="float:right;" />
+	
+<h2>Edit your note</h2>
+
+<% form_tag :action => 'update', :id => @note do %>
+
+  	<%= render :partial => 'edit' %>
+	
+	<p>
+	<%= submit_tag "Update" %> 
+	
+	<%= button_to_function "Cancel", "window.location='/note/list'" %> 
+	<%= link_to '[Destroy]', { :action => 'destroy', :id => @note }, :confirm => 'Are you sure?', :method => :post %>
+	</p>
+
+<% end %>
+
+<%= render :partial => 'versions' %>

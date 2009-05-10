@@ -1,0 +1,5 @@
+<% for @list in @lists %>
+	<% if @list.user_id == self.current_user.id %>
+	<%= render :partial => 'list' %>
+	<% end %>
+<% end %>
